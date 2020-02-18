@@ -3,47 +3,47 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+- Ruby version: **ruby 2.6.3**
 
-* Ruby version
-  *  ** ruby '2.6.3'
+- System dependencies
 
-* System dependencies
+- Configuration
 
-* Configuration
+- Database creation
 
-* Database creation
+**User** 
+|  Column  |   Type   |
+| :------  | :------  |
+|   name   |  string  | 
 
-```=Ruby
-User 
-name, string 
-```
-```=Ruby
-Task 
-title, string  
-content, text 
-begin_time, datetime
-end_time, datetime
-priority, string 
-status, string 
-user_id, index
-```
-```Ruby= 
-Label 
-name, string
-```
-```Ruby= 
-Task_labels
-task_id, index
-label_id, index 
-```
+**Task** 
+|  Column  |   Type   |
+| :------  | :------  |
+|  title   |  string  |
+|  content |   text   |
+| begin_time | datetime |
+|  due_time  | datetime |
+| priority | string |
+|  status  | string | 
+|  user_id |  index | 
 
-* Database initialization
+**Label**
+|  Column  |   Type   |
+| :------  | :------  |
+|   name   |  string  |
 
-* How to run the test suite
+**Take_labels**
+|  Column  |   Type   |
+| :------  | :------  |
+|  task_id |   index  |
+| label_id |   index  |
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+- Database initialization
 
-* ...
+- How to run the test suite
+
+- Services (job queues, cache servers, search engines, etc.)
+
+- Deployment instructions
+
