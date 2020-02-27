@@ -3,7 +3,7 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-- Ruby version: **ruby 2.6.3**
+- Ruby version: `2.6.3`
 
 - System dependencies
 
@@ -32,7 +32,7 @@ application up and running.
 | :------  | :------  |
 |   name   |  string  |
 
-**Take_labels**
+**Task_labels**
 |  Column  |   Type   |
 | :------  | :------  |
 |  task_id |   index  |
