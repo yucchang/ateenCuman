@@ -1,0 +1,29 @@
+<% if task.errors.any? %>
+  <% task.errors.full_messages.each do |msg| %>
+    <%= msg%>
+  <% end %>
+<% end %>
+
+
+<%= form_for @task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</br>
+  <%= f.label :beginning_at %>
+  <%= f.datetime_select :beginning_at %>
+</br>  
+  <%= f.label :due_at %>
+  <%= f.datetime_select :due_at %>
+</br>  
+  <%= f.label :priority %>
+  <%= f.select :priority, Task.priorities.keys %>
+</br>  
+  <%= f.label :status %>
+  <%= f.select :status, Task.statuses.keys %>
+</br>  
+  <%= f.label :cotent %>
+  <%= f.text_area :content %>
+</br>
+  <%= f.submit %>
+  <%= link_to 'Back', tasks_path %>
+<% end %>
