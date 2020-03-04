@@ -1,2 +1,13 @@
-<h1>Task Management</h1>
+<h1>Manage Your Task</h1>
 
+<%= link_to 'Create task', new_task_path %>
+</br>
+
+<% @tasks.each do |task| %>
+
+  <%= task.title %>
+  <%= link_to 'Edit', edit_task_path(task) %>
+  <%= link_to 'Delete', task_path(task), method: :delete, data: {confirm: 'Sure to delete this?'} %>
+</br>
+
+<% end %>
