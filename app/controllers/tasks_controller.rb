@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :find_task, except: [:index, :create, :new]
+  before_action :find_task, except: [:index, :new, :create]
 
   def index 
     @tasks = Task.all
