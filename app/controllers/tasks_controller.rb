@@ -14,6 +14,7 @@ class TasksController < ApplicationController
 
   def create 
     @task = Task.new(task_params)
+  
 
     if @task.save
       redirect_to root_path, notice: 'Task created.'

@@ -1,29 +1,37 @@
-<% if task.errors.any? %>
-  <% task.errors.full_messages.each do |msg| %>
-    <%= msg%>
-  <% end %>
-<% end %>
-
-
-<%= form_for @task do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-</br>
-  <%= f.label :beginning_at %>
-  <%= f.datetime_select :beginning_at %>
-</br>  
-  <%= f.label :due_at %>
-  <%= f.datetime_select :due_at %>
-</br>  
-  <%= f.label :priority %>
-  <%= f.select :priority, Task.priorities.keys %>
-</br>  
-  <%= f.label :status %>
-  <%= f.select :status, Task.statuses.keys %>
-</br>  
-  <%= f.label :cotent %>
-  <%= f.text_area :content %>
-</br>
-  <%= f.submit %>
+<%= simple_form_for @task do |f| %>
+<div class="row">
+  <div class="col-6">
+    <%= f.error_notification %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <%= f.input :title %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <%= f.input :beginning_at %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <%= f.input :due_at %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <%= f.input :priority, collection: Task::priorities.keys %>
+  </div>
+  <div class="col-3">
+    <%= f.input :status, collection: Task::statuses.keys %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <%= f.input :content %>
+  </div>
+</div>
+  <%= f.button :submit, class: "btn-primary" %>
   <%= link_to 'Back', tasks_path %>
 <% end %>
