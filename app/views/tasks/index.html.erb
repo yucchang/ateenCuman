@@ -1,13 +1,27 @@
-<h1>Manage Your Task</h1>
+<h1 class="text-monospace">Manage Your Task</h1>
 
-<%= link_to 'Create task', new_task_path %>
-</br>
+<%= link_to 'Add a task', new_task_path, class:'btn btn-primary text-monospace' %>
 
-<% @tasks.each do |task| %>
-
-  <%= task.title %>
-  <%= link_to 'Edit', edit_task_path(task) %>
-  <%= link_to 'Delete', task_path(task), method: :delete, data: {confirm: 'Sure to delete this?'} %>
-</br>
-
-<% end %>
+<table class="table table-dark my-1 text-monospace">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Status</th>
+      <th scope="col">Priority</th>
+      <th scope="col">Function</th>
+      <th scope="col">Function</th>
+    </tr>
+  </thead>
+  <% @tasks.each do |task| %>
+  <tbody>
+    <tr>
+      <th><%= link_to task.title, task_path(task) %></th>
+      <td><%= task.status %></td>
+      <td><%= task.priority %></td>
+      <td><%= link_to 'Edit', edit_task_path(task) %></td>
+      <td><%= link_to 'Delete', task_path(task), method: :delete, data: {confirm: 'Sure to delete this?'} %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+  

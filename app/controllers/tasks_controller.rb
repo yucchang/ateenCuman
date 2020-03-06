@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :find_task, except: [:index, :new, :create]
 
   def index 
-    @tasks = Task.all
+    @tasks = Task.incomplete
   end 
 
   def show
