@@ -1,5 +1,22 @@
-<p class="text-monospace font-weight-bold">
-  Task: 
-  <%= @task.title %>
-</p>
-
+<h2 class="text-monospace font-weight-bold"><%= @task.title %></h2>
+<table class="table table-info my-1 text-monospace">
+  <thead>
+      <tr>
+        <th scope="col">Status</th>
+        <th scope="col">Priority</th>
+        <th scope="col">Content</th>
+        <th scope="col">Beginning_at</th>
+        <th scope="col">Due_at</th>
+      </tr>
+    <tbody>
+      <tr>
+        <td><%= @task.status %></td>
+        <td><%= @task.priority %></td>
+        <td  class="text-wrap" style="width: 20rem;"><%= @task.content %></td>
+        <td><%= @task.beginning_at.strftime("%Y %m %d") %></td>
+        <td><%= @task.due_at.strftime("%Y %m %d") %></td>
+      </tr>
+    </tbody>
+  </thead>
+</table>
+<%= link_to 'Back', tasks_path %>
