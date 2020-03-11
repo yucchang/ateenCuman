@@ -8,8 +8,7 @@
       <th scope="col">Title</th>
       <th scope="col">Status</th>
       <th scope="col">Priority</th>
-      <th scope="col">Function</th>
-      <th scope="col">Function</th>
+      <th scope="col" colspan="2" class="text-center">Function</th>
     </tr>
   </thead>
   <% @tasks.each do |task| %>
@@ -18,10 +17,9 @@
       <th><%= link_to task.title, task_path(task) %></th>
       <td><%= task.status %></td>
       <td><%= task.priority %></td>
-      <td><%= link_to 'Edit', edit_task_path(task) %></td>
-      <td><%= link_to 'Delete', task_path(task), method: :delete, data: {confirm: 'Sure to delete this?'} %></td>
+      <td class="text-center"><%= link_to 'Edit', edit_task_path(task) %></td>
+      <td class="text-center"><%= link_to 'Delete', task_path(task), method: :delete, data: {confirm: 'Sure to delete this?'} %></td>
     </tr>
   </tbody>
   <% end %>
 </table>
-  
