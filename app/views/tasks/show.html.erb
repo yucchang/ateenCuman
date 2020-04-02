@@ -11,7 +11,7 @@
     </tr>
     <tr>
       <th scope="row" width="20%">Begin - Due</th>
-      <td><%= @task.beginning_at.strftime("%Y/%m/%d") %> - <%= @task.due_at.strftime("%Y/%m/%d") %></td>
+      <td><%= @task.beginning_at&.strftime("%Y/%m/%d") %> - <%= @task&.due_at&.strftime("%Y/%m/%d") %></td>
     </tr>
     <tr>
       <th scope="row" width="20%">Content</th>
