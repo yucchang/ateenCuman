@@ -23,7 +23,6 @@ feature 'Create task' do
     expect(page).to have_current_path('/')
     expect(page).to have_content('Task created.')
     expect(Task.count).to eq 1
-    sleep(3)
   end
 end
 
@@ -33,7 +32,6 @@ feature 'Read task' do
     visit tasks_path
 
     click_link task_1.title
-    sleep(3)
 
     expect(current_path).to eq(task_path(task_1))
     expect(page).to have_selector 'h2', text: 'Test'
@@ -50,7 +48,6 @@ feature 'Update task' do
     visit edit_task_path(task_1)
     fill_in 'Title', with: 'Ongoing task'
     click_on('Update Task')
-    sleep(3)
 
     expect(page).to have_current_path('/')
     expect(page).to have_content('Task updated.')
@@ -62,11 +59,7 @@ feature 'Delete task' do
   scenario 'remove certain task' do
     task_1 = Task.create!(title: 'Test')
     visit tasks_path
-    click_link 'Delete'
-    sleep(3)
-
-    page.accept_confirm {'Sure to delete this?'}
-    sleep(3)
+    click_on('Delete')
 
     expect(page).to have_content('Task deleted.')
     expect(Task.count).to eq 0
